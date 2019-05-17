@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/productsdetails/productsdetails",
+    "pages/login/login",
+    "pages/my/my",
+    "pages/ShoppingCart/ShoppingCart",
+    "pages/activitydetails/activitydetails",
+    "pages/submitorders/submitorders",
+    "pages/orderslist/orderslist",
+    "pages/ordersdetail/ordersdetail",
+    "pages/useragreement/useragreement",
+    "pages/oftenconsignee/oftenconsignee",
+    "pages/accountconfigure/accountconfigure",
+    "pages/mygrouplist/mygrouplist",
+    "pages/chooseactivity/chooseactivity",
+    "pages/template/globalSearch/globalSearch",
+    "pages/activityshare/activityshare",
+    "pages/livePayment/livePayment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "安心购",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon/index.png",
+        "selectedIconPath": "image/icon/indexcheck.png"
+      },
+      {
+        "pagePath": "pages/ShoppingCart/ShoppingCart",
+        "text": "购物车",
+        "iconPath": "image/icon/shoppingcartCheck.png",
+        "selectedIconPath": "image/icon/shoppingcart.png"
+      },    
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "image/icon/my.png",
+        "selectedIconPath": "image/icon/mycheck.png"
+      }
+    ],
+    "borderStyle": "white",
+    "color": "#333333",
+    "selectedColor": "#E22C47"
+  }
+}
