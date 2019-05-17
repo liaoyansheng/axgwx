@@ -1,0 +1,24 @@
+<!--pages/chooseactivity/chooseactivity.wxml-->
+<block wx:for="{{OtherActivitylist}}" wx:key="{{index}}">
+<view class='content'>
+  <checkbox-group  data-id="{{item.id}}" bindchange="act_check">
+  <checkbox value='{{item.id}}' checked="{{selectStatus}}"/>
+  </checkbox-group>
+  <view class='flex-row-between'>
+    <image class='img-icon' src='{{osspath}}{{item.images[0].picture_url}}'></image>
+    <view class='flex-column-between message'>
+      <text class='content-title'>{{item.title}}</text>
+      <text class='content-introduce'>{{item.introduction}}</text>
+      <text class='content-time'>时间：{{item.start_time}}至  {{item.end_time}}</text>
+    </view>
+  </view>
+</view>
+</block>
+
+<view style='width:750rpx;height:100rpx;'></view>
+<!-- 已选择活动按钮 -->
+<view class='flex-row-between' style='width:750rpx;height:100rpx;position:fixed;bottom:0;left:0;'>
+  <view class='chooseactivity' bindtap=''>已选择{{num}}个活动</view>
+  <view class='choosekeep' bindtap='confirm'>确认</view>
+</view>
+<!-- 已选择活动按钮 -->

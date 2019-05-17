@@ -1,0 +1,26 @@
+<view class='login'> 
+  <view class='login-logo'> 
+    <image class='login-logo-image' src="https://zhipai.oss-cn-shenzhen.aliyuncs.com/20190301/20190301093120D08F.png">
+    </image>
+    <image class='login-tip-image' src="https://zhipai.oss-cn-shenzhen.aliyuncs.com/20190301/201903010937091F01.png">
+    </image>
+    <view class='login-explain'>
+    您暂未获取微信授权，将无法正常下单，如需正常使用本小程序功能，首次打开请点击“授权登录”按钮，开启用户信息授权。
+    </view>
+    <view class='login-welcome'>
+    安心购 · 感谢您的光临！
+    </view>
+  </view>
+
+  <view>
+    <button wx:if="{{canIUse}}" open-type="getUserInfo"  bindgetuserinfo="getUserInfo" class='loginbtn'>
+    授权登录
+    </button>
+    <view wx:else>请升级微信版本</view>
+
+
+
+  </view>
+
+
+</view>

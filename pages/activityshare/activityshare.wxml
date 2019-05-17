@@ -1,0 +1,41 @@
+<!--pages/activityshare/activityshare.wxml-->
+<!-- banner 轮播图 -->
+<view class='swiperBox'>
+  <swiper class='swiperBox' autoplay='{{autoplay}}' current='{{current}}' interval='{{interval}}' duration='{{duration}}'>
+    <block wx:for='{{bannerlist}}' wx:key='bannerlist'>
+      <swiper-item>
+        <image wx:if='{{osspath}}{{item.path}}' src='{{osspath}}{{item.path}}' class='swiperBox' bindtap='towxappurl' data-url='{{item.url}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 活动列表 -->
+<block wx:for="{{activities}}" wx:key="{{index}}" wx:for-item="activity">
+  <view class='activitylist' bindtap="toactivitydetails" data-id='{{activity.id}}'>
+    <view class='activity-title'>{{activity.title}}</view>
+    <view class='activity-introduce'>{{activity.introduction}}</view>
+    <view class='activity-time'>活动时间：{{activity.start_time}}至  {{activity.end_time}}</view>
+    <view class='activity-imglist'>
+
+      <block wx:for="{{activity.images}}" wx:key="index" wx:for-item="product">
+        <image class='activity-img' mode='widthFix' src='{{osspath}}{{product.picture_url}}'></image>
+      </block>
+      
+    </view>
+    <view class='activity-visitnum'>有{{activity.visit_count}}人看过，{{activity.join_count}}人参与</view>
+  </view>
+</block>
+
+
+<block wx:if="{{user.USER.type == 2}}">
+<!-- 分享到微信群 -->
+<view style='width:750rpx;height:120rpx;'></view>
+<button class='sharebtn' open-type="share">
+<view class='share'>
+  
+  分享到微信群
+  
+</view>
+</button>
+</block>

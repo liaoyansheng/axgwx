@@ -1,0 +1,62 @@
+/* pages/livePayment/livePayment.wxss */
+page{
+  background: #F7F7F7;
+}
+.title{
+width:750rpx;
+height:40rpx;
+font-size:36rpx;
+font-family:SourceHanSansCN-Regular;
+font-weight:600;
+color:rgba(0,0,0,1);
+line-height:40rpx;  
+text-align: center;
+margin: 20rpx 0;
+}
+.logopage{
+width:750rpx;
+text-align: center;
+margin: 50rpx 0;
+}
+.logo{
+width:176rpx;
+height:254rpx;
+}
+.content{
+  width: 670rpx;
+  margin:20rpx;
+  padding: 20rpx;
+  background: #FFF;
+}
+.pri{
+  font-size:30rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:40rpx;  
+}
+.mony-ipt{
+  height:100rpx;
+  width:600rpx;
+  margin-left:20rpx;
+}
+.pay-btn{
+  width:600rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  background:rgba(226,44,71,1);
+  color:#FFF;
+  border-radius:10rpx;  
+  text-align: center;
+  margin:35rpx;
+}
+.pay-tip{
+  height:40rpx;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Normal;
+  font-weight:400;
+  color:rgba(226,44,71,1);
+  line-height:30rpx; 
+  text-align: center; 
+}
+

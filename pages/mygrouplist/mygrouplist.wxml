@@ -1,0 +1,27 @@
+<!--pages/mygrouplist/mygrouplist.wxml-->
+<block wx:for="{{activitylist}}" wx:key="{{index}}">
+  <view class='activitylist' bindtap='' data-id="">
+    <view class='activity-title'>{{item.title}}</view>
+    <view class='activity-introduce'>{{item.introduction}}</view>
+    <view class='activity-time'>时间：{{item.start_time}}至  {{item.end_time}}</view>
+    <view class='activity-imglist'>
+      <block wx:for="{{item.images}}" wx:key="{{index}}">
+      <image class='activity-img' src='{{osspath}}{{item.picture_url}}'>
+      </image>
+      </block>
+    </view>
+    <view class='flex-row-between'>
+      <view class='activity-visitnum'>有{{item.visit_count}}人看过，{{item.join_count}}人参与</view>
+      <view class='deleteactivity' data-id="{{item.id}}" bindtap='deleteActivity'>删除活动</view>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{activitylist.length == 0}}">
+  <view class='blank-tip'>该小区暂无任何团购活动</view>
+</block>
+
+<view style='width:750rpx;height:100rpx;'></view>
+<!-- 选择活动按钮 -->
+<view class='chooseactivity' bindtap='chooseactivitybtn'>选择活动</view>
+<!-- 选择活动按钮 -->

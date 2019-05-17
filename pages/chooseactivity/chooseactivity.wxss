@@ -1,0 +1,93 @@
+/* pages/chooseactivity/chooseactivity.wxss */
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 710rpx;
+  padding: 20rpx;
+  border-bottom: 8rpx solid #F2F2F2;
+}
+.message{
+  width:460rpx;
+  margin-left:20rpx;
+}
+.content-title{
+  width:460rpx;
+  font-size:36rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(226,44,71,1);
+  line-height:36rpx;  
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap; 
+}
+.content-introduce{
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  width:460rpx;
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:36rpx;  
+}
+.content-time{
+  width:460rpx;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:36rpx;  
+}
+
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+    border-radius: 50%;/* 圆角 */
+    width: 40rpx; /* 背景的宽 */
+    height: 40rpx; /* 背景的高 */
+    border-color: rgba(226,44,71,1);
+    margin: 0 10rpx;
+}
+
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+    background: rgba(226,44,71,1);
+    border-color: rgba(226,44,71,1);
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+    border-radius: 50%;
+    width: 46rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    text-align: center;
+    font-size: 28rpx; /* 对勾大小 28rpx */
+    color: #fff; /* 对勾颜色 白色 */
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.chooseactivity{
+  width:375rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color:rgba(226,44,71,1);
+  background: rgba(255,224,229,1);
+}
+.choosekeep{
+  width:375rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color:#FFF;
+  background: rgba(226,44,71,1);  
+}

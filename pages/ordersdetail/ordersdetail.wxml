@@ -1,0 +1,47 @@
+<!--pages/ordersdetail/ordersdetail.wxml-->
+<view class='adress'>
+  <image class='ad-icon' src='/image/icon/adress.png'></image>
+  <view>
+    <view class='adress-consignee'>
+      <text>收获人：{{roderdetail.name}}</text>
+      <text>{{roderdetail.tel}}</text>
+    </view>
+    <view class='adress-ad'>收货地址：{{roderdetail.address}}</view>
+  </view>
+</view>
+
+<view class='line' style='border-bottom:8rpx solid #F1F1F1;'>
+  <image class='line' src='/image/icon/line.png'></image>
+</view>
+
+<view class='order'>
+  <view class='order-data'>
+    <view class='flex-column'>
+      <text class='order-data-one'>订单编号：{{roderdetail.order_number}}</text>
+      <text class='order-data-one'>提交日期：{{roderdetail.create_time}}</text>
+    </view>
+    <block wx:if='{{roderdetail.status == 1}}'><view class='order-statu'>待付款</view></block>
+    <block wx:if='{{roderdetail.status == 2}}'><view class='order-statu'>待发货</view></block>
+    <block wx:if='{{roderdetail.status == 3}}'><view class='order-statu'>已发货</view></block>
+    <block wx:if='{{roderdetail.status == 5}}'><view class='order-statu'>已关闭</view></block>
+  </view>
+  <block wx:for="{{roderdetail.products}}" wx:key="" wx:for-item="product">
+    <view class='order-msg' data-id="{{product.id}}" bindtap='toproductsdetails'>
+      <image class='order-pic' src='{{osspath}}{{product.picture_url}}'></image>
+      <view class='order-title'>{{product.name}}</view>
+      <view class='order-pri'>
+        <text style='color:#E22C47;'>￥{{product.group_price}}</text>
+        <text>{{product.specification}}</text>
+        <text> x {{product.num}}</text>
+      </view>
+    </view>
+  </block>
+  <view class='order-price'>
+    <text>实付款：</text>
+    <text style='color:#E22C47;'>¥{{roderdetail.amount}}</text>
+  </view>
+
+</view>
+
+
+

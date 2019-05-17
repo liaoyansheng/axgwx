@@ -1,0 +1,67 @@
+<!--pages/orderslist/orderslist.wxml-->
+<import src="../template/globalSearch/globalSearch.wxml"/>
+<template is='globalSearch' data='{{searchTip}}'/>
+<view class='flex-row'>
+  <block wx:if="{{statu != 0}}"><view bindtap='tostatu1'>全部</view></block>
+  <block wx:if="{{statu == 0}}"><view style='color:#E22C47'>全部</view></block>
+
+  <block wx:if="{{statu != 1}}"><view bindtap='tostatu2'>待付款</view></block>
+  <block wx:if="{{statu == 1}}"><view style='color:#E22C47'>待付款</view></block>
+
+  <block wx:if="{{statu != 2}}"><view bindtap='tostatu3'>待发货</view></block>
+  <block wx:if="{{statu == 2}}"><view style='color:#E22C47'>待发货</view></block>
+
+  <block wx:if="{{statu != 3}}"><view bindtap='tostatu4'>已发货</view></block>
+  <block wx:if="{{statu == 3}}"><view style='color:#E22C47'>已发货</view></block>
+
+  <block wx:if="{{statu != 5}}"><view bindtap='tostatu5'>已关闭</view></block>
+  <block wx:if="{{statu == 5}}"><view style='color:#E22C47'>已关闭</view></block>
+</view>
+
+<block wx:for="{{orderlist}}" wx:key="{{index}}">
+<view class='order'>
+  <view class='order-data'>
+    <view class='flex-column'>
+      <text class='order-data-one'>订单编号：{{item.order_number}}</text>
+      <text class='order-data-one'>提交日期：{{item.create_time}}</text>
+    </view>
+    <block wx:if='{{item.status == 1}}'><view class='order-statu'>待付款</view></block>
+    <block wx:if='{{item.status == 2}}'><view class='order-statu'>待发货</view></block>
+    <block wx:if='{{item.status == 3}}'><view class='order-statu'>已发货</view></block>
+    <block wx:if='{{item.status == 4}}'><view class='order-statu'>已取消</view></block>
+    <block wx:if='{{item.status == 5}}'><view class='order-statu'>已关闭</view></block>
+  </view>
+  <block wx:for="{{item.products}}" wx:key="" wx:for-item="product">
+    <view class='order-msg' data-id="{{product.id}}" bindtap='toproductsdetails'>
+      <image class='order-pic' src='{{osspath}}{{product.picture_url}}'></image>
+      <view class='order-title'>{{product.name}}</view>
+      <view class='order-pri'>
+        <text style='color:#E22C47;'>￥{{product.group_price}}</text>
+        <text>{{product.specification}}</text>
+        <text> x {{product.num}}</text>
+      </view>
+    </view>
+  </block>
+  <view class='order-price'>
+    <text>商品总价：</text>
+    <text style='color:#E22C47;'>¥{{item.amount}}</text>
+  </view>
+  <view class='order-btn'>
+    <view class='msg-btn' data-id="{{item.order_number}}" bindtap='toordersdetail'>详情</view>
+    <block wx:if="{{item.status == 1}}">
+      <view class='pay-btn' data-id="{{item.order_number}}" bindtap='orderpay'>付款</view>
+      <view class='cancel-btn' data-id="{{item.order_number}}" bindtap='deleteOrder'>取消订单</view>
+    </block>
+    <block wx:if="{{item.status == 3}}">
+      <!-- <view class='pay-btn'>再次购买</view> -->
+    </block>
+    <block wx:if="{{item.status == 5}}">
+      <!-- <view class='cancel-btn' data-id="{{item.order_number}}" bindtap='deleteOrder'>删除订单</view> -->
+    </block>
+  </view>
+</view>
+</block>
+
+<block wx:if="{{orderlist.length == 0}}">
+  <view class='noneTip'>暂无订单信息</view>
+</block>

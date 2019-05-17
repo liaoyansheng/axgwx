@@ -1,0 +1,50 @@
+.login{
+  height: 100vh;
+  width: 100vw;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.login-logo{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:120rpx 0;
+}
+.login-logo-image{
+  width: 176rpx;
+  height: 254rpx;
+}
+.login-tip-image{
+  width: 414rpx;
+  height: 60rpx;
+  margin:90rpx auto;
+}
+.login-explain{
+  color: #666666;
+  font-size:24rpx;
+  font-weight:400;
+  padding:60rpx;
+  padding-bottom:56rpx;
+  padding-top:30rpx;
+}
+.login-welcome{
+  font-size:28rpx;
+  font-weight:600;
+  color: #000000;
+}
+.loginbtn{
+  position:fixed;
+  top:78%;
+  left:25%;
+  width:379rpx;
+  height:80rpx;
+  text-align: center;
+  color: #FFF;
+  font-weight:600;
+  font-size:40rpx;
+  background:#E22C47;
+  border-radius:45px;
+  line-height:80rpx;
+}

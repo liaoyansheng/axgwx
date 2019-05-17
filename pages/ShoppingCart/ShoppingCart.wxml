@@ -1,0 +1,49 @@
+<!--pages/ShoppingCart/ShoppingCart.wxml-->
+<block wx:for="{{products}}" wx:key="{{index}}">
+<view class='content'>
+  <checkbox-group  data-id="{{item.id}}" data-index="{{index}}" data-num="{{item.num}}" data-pri="{{item.group_price}}"   bindchange="checkProduct">
+    <checkbox value='{{item.id}}' checked="{{selectStatus}}"/>
+  </checkbox-group>
+  <view class='flex-row-between'>
+      <image wx:if="{{item.picture_url}}" class='img-icon' src='{{osspath}}{{item.picture_url}}'></image>
+      <view class='flex-column-between message'>
+            <text class='content-title'>{{item.name}}</text>
+            <text class='content-introduce'>{{item.specification}}</text>
+            <view class='pri-num'>
+              <view class='content-time'>￥{{item.group_price}}</view>
+              <view class='flex-row'>
+                <image class='reduce' src='/image/icon/reduce.png' 
+                bindtap='reduceNum' data-num="{{item.num}}" data-id="{{item.id}}" 
+                data-cart_id="{{item.cart_id}}">
+                </image>
+                <text class='num'>{{item.num}}</text>
+                <image class='add' src='/image/icon/add.png' bindtap='addNum'
+                 data-cart_id="{{item.cart_id}}"
+                 data-id="{{item.id}}" data-num="{{item.num}}">
+                 </image>
+              </view>
+            </view>
+      </view>
+  </view>
+</view>
+</block>
+<block wx:if="{{products == ''}}">
+<view class='empty'>
+  <image class='emptycart' src='/image/icon/emptycart.png'></image>
+  <view class='emptytext'>购物车空空如也，快去选购商品吧！</view>
+</view>
+</block>
+
+<view style='width:750rpx;height:160rpx;'></view>
+
+<!-- 选择结果 -->
+<view class='checknum'>
+  <checkbox-group  data-id="" bindchange="selectAll">
+    <checkbox value='{{selectStatus}}' checked="{{selectStatus}}"/>
+  </checkbox-group>
+  <text class='checkall'>全选</text>
+  <image bindtap='delete' style='width:40rpx;height:40rpx;margin:40rpx 20rpx;' src='/image/icon/delete.png'></image>
+  <view class='all-pri'>合计:<text style='color:#E22C47;'>¥{{totalPrice}}</text></view>
+  <view class='total' bindtap='Settlement'>结算({{sum}})</view>
+</view>
+<!-- 选择结果 -->

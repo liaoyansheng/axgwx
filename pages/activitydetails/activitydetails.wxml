@@ -1,0 +1,51 @@
+<!-- banner 轮播图 -->
+<view class='swiperBox'>
+  <swiper class='swiperBox' autoplay='{{autoplay}}' current='{{current}}' interval='{{interval}}' duration='{{duration}}'>
+    <block wx:for='{{activity.activity_images}}' wx:key='bannerlist'>
+      <swiper-item bindtap='towxappurl' data-url='{{item.picture_url}}'>
+        <image src='{{osspath}}{{item.picture_url}}' class='swiperBox'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- banner 轮播图 -->
+
+<!-- 特定活动首页 -->
+<view class='activity-title'>安心购之{{activity.title}}</view>
+<view class='activitylist' wx:for="{{product_list}}" wx:key="{{index}}" wx:for-item="product">
+  <view class='activity-introduce'>{{product.name}}</view>
+  <view class='activity-time'>{{product.name}}·{{product.specification}}</view>
+  <view class='activity-imglist'>
+    <block wx:for="{{product.product_images}}" wx:for-item="image" wx:key="{{index}}">
+    <image class='activity-img' src='{{osspath}}{{image.picture_url}}' bindtap="toProductDetails" data-id="{{product.id}}" data-status="{{product.status}}"></image>
+    </block>
+  </view>
+  <view class='product-details'>
+    <text class='product-parameter'>{{product.specification}}</text>
+    <text class='product-price'>￥{{product.group_price}}</text>
+    <text class='product-statu' wx:if="{{product.status == 1}}">产品已下线</text>
+    <view class='flex-row' wx:if="{{product.status == 2}}">
+      <image class='red-img' src="/image/icon/reduce.png" bindtap="reduceNum" data-num="{{product.num}}" data-index="{{index}}"></image>
+      <input class='numipt' value='{{product.num}}' bindinput="inputNum" type="number" data-num="{{product.num}}" data-index="{{index}}"/>
+      <image class='red-img' src="/image/icon/add.png" bindtap="addNum" data-num="{{product.num}}" data-index="{{index}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 特定活动首页 -->
+
+<view style='width:750rpx;height:120rpx;'></view>
+
+<!-- 固定底部选 -->
+<cover-view class='buycheckbox'>
+  <cover-view class='toindex' bindtap='toindex'>
+    <cover-image class='index-img' src='/image/icon/indexcheck.png'/>
+    <cover-view>首页</cover-view>
+  </cover-view>
+  <cover-view class='buy-num'>
+    <cover-view>已选：{{count}}</cover-view>
+    <cover-view>￥{{amount}}</cover-view>
+  </cover-view>
+  <cover-view class='buy-btn' bindtap='buybtn'><cover-view>立即购买</cover-view></cover-view>
+</cover-view>
+<!-- 固定底部选 -->
+

@@ -1,0 +1,128 @@
+<!--pages/productsdetails/productsdetails.wxml-->
+<!-- 顶部轮播图 -->
+<swiper style="height:750rpx" indicator-dots="true" autoplay='true' circular='true'>
+<block wx:for="{{imgUrls}}" wx:key="index">
+  <swiper-item>
+    <image src="{{item}}"  bindtap="previewImage" data-src="{{item}}" style="width:750rpx;height:750rpx"/>
+  </swiper-item>
+</block>
+</swiper>
+<!-- 顶部轮播图 -->
+
+<view class='product-detail'>
+  <view class='product-title'>{{product.name}}</view>
+  <view class='product-ind'>{{product.introduction}}</view>
+  <view class='flex-row-between'>
+  <view class='product-price'>￥{{product.group_price}}</view>
+  <view class='product-spe'>{{product.specification}}</view>
+  </view>
+  <view class='product-num'>
+    <view class='product-num-one'>销量：{{product.sold_out_count}}</view>
+    <view class='product-num-one'>剩余：{{product.stock}}</view>
+    <view class='product-num-one' style='text-align:left'>配送方式：到店自提</view>
+  </view>
+</view>
+
+<!-- <view class='product-spe'>
+  商品规格：{{product.specification}}
+</view> -->
+
+<view class='product-img'>
+  <block wx:for="{{detailUrls}}" wx:key="index">
+    <image mode='widthFix' src='{{item}}' bindtap="previewDetail" data-src="{{item}}"></image>
+  </block>
+</view>
+
+<view style='width:750rpx;height:120rpx;'></view>
+
+<!-- 固定底部选 -->
+<block wx:if="{{buyboxstatu == true}}">
+<cover-view class='buycheckbox'>
+
+  <cover-view class='toindex' bindtap='toindex'>
+    <cover-image class='index-img' src='/image/icon/index.png'/>
+    <cover-view>首页</cover-view>
+  </cover-view>
+
+  <button class='contact' open-type="contact">
+    <cover-view class='toindex'>
+      <cover-image class='index-img' src='/image/icon/kefu2.png'/>
+      <cover-view style='line-height:36rpx;'>客服</cover-view>
+    </cover-view>
+  </button>
+
+  <cover-view class='toindex' bindtap='toShoppingCart'>
+    <cover-image class='index-img' src='/image/icon/shoppingcartCheck.png'/>
+    <cover-view>购物车</cover-view>
+    <block wx:if="{{cartnum}}">
+    <cover-view class='shopNum'>{{cartnum}}</cover-view>
+    </block>
+  </cover-view>
+
+  <cover-view class='shopcart-btn' bindtap='shopbtn'>
+  加入购物车
+  </cover-view>
+
+  <block wx:if="{{product.status == 1}}">
+  <cover-view class='buy-btn' style='background-color:#DCDCDC;'>已下架</cover-view>
+  </block>
+
+  <block wx:if="{{product.status == 2}}">
+  <cover-view class='buy-btn' bindtap='buybtn'>
+  <cover-view>立即购买 </cover-view>
+  </cover-view>
+  </block>
+
+</cover-view>
+</block>
+<!-- 固定底部选 -->
+
+<!-- 加入购物车弹窗 -->
+<view class="commodity_screen" bindtap="hideModal1" wx:if="{{showModalStatus1}}"></view>
+<view animation="{{animationData1}}" class="commodity_attr_box" wx:if="{{showModalStatus1}}">
+  <view class='flex-row title'>
+    <image class='buy-img' src='{{imgUrls[0]}}'></image>
+    <view class='flex-column' style='width:444rpx;'>
+      <text class='buy-title'>{{product.name}}</text>
+      <text class='buy-spe'>{{product.specification}}</text>
+      <text class='buy-price'>￥{{product.group_price}} </text>
+    </view>
+    <image class='cancel-img' catchtap='hideModal1' src="/image/icon/close.png"></image>
+  </view>
+  <view class='buy-num'>
+    <view>购买数量</view>
+    <view class='flex-row' style='align-items: center;'>
+      <image class='red-img' src="/image/icon/reduce.png" bindtap="reduceNum"></image>
+      <input class='numipt' value='{{num}}' bindinput="inputNum" type="number"/>
+      <image class='red-img' src="/image/icon/add.png" bindtap="addNum"></image>
+    </view>
+  </view>
+  <view class='remainnum'>剩余数量：{{product.stock}}</view>
+  <view class='nextbtn' bindtap='addCartProduct' data-id="{{product.id}}">加入购物车</view>
+</view>
+<!-- 加入购物车弹窗 -->
+
+<!-- 购买弹窗 -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='flex-row title'>
+    <image class='buy-img' src='{{imgUrls[0]}}'></image>
+    <view class='flex-column' style='width:444rpx;'>
+      <text class='buy-title'>{{product.name}}</text>
+      <text class='buy-spe'>{{product.specification}}</text>
+      <text class='buy-price'>￥{{product.group_price}} </text>
+    </view>
+    <image class='cancel-img' catchtap='hideModal' src="/image/icon/close.png"></image>
+  </view>
+  <view class='buy-num'>
+    <view>购买数量</view>
+    <view class='flex-row' style='align-items: center;'>
+      <image class='red-img' src="/image/icon/reduce.png" bindtap="reduceNum"></image>
+      <input class='numipt' value='{{num}}' bindinput="inputNum" type="number"/>
+      <image class='red-img' src="/image/icon/add.png" bindtap="addNum"></image>
+    </view>
+  </view>
+  <view class='remainnum'>剩余数量：{{product.stock}}</view>
+  <view class='nextbtn' bindtap='toOrderDetails' data-id="{{product.id}}">下一步</view>
+</view>
+<!-- 购买弹窗 -->

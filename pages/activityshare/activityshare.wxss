@@ -1,0 +1,70 @@
+/* pages/activityshare/activityshare.wxss */
+.swiperBox{
+  width:750rpx;
+  height:350rpx;
+}
+.activitylist{
+  width: 710rpx;
+  height: auto;
+  padding:20rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 8rpx solid #F1F1F1;
+}
+.activity-title{
+  height:60rpx;
+  width:100%;
+  font-size:36rpx;
+  font-weight:600;
+  color:rgba(226,44,71,1);
+  line-height:35rpx;
+  margin-bottom:6rpx; 
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.activity-introduce{
+  width:100%;
+  font-size:30rpx;
+  font-weight:550;
+  color:rgba(0,0,0,1);
+  margin:10rpx 0;
+}
+.activity-time{
+  width:100%;
+  font-size:26rpx;
+  color:rgba(102,102,102,1);
+  margin:10rpx 0;
+}
+.activity-imglist{
+  display: flex;
+  flex-flow: row wrap;
+  margin:10rpx 0;
+}
+.activity-img{
+  width: 335rpx;
+  border-radius:10rpx;
+  margin: 0 20rpx 20rpx 0;
+}
+.activity-visitnum{
+  font-size:20rpx;
+  color:rgba(226,44,71,1);
+}
+.share{
+  width:750rpx;
+  height:120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  position:fixed;
+  background-color: rgba(226,44,71,1);
+  color:#FFF;
+  bottom:0;
+  left:0;
+}
+.sharebtn{
+  background-color: #FFF;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+}
+.sharebtn::after{
+ border: #FFF solid;
+}

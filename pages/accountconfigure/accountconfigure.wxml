@@ -1,0 +1,72 @@
+<!--pages/accountconfigure/accountconfigure.wxml-->
+<view class='title'>基本信息</view>
+<view class='consignee-name'>
+  <text>头像</text>
+  <image class='head' src='{{USER.head_src}}'></image>
+</view>
+<view class='consignee-name' hover-class='light' bindtap='editnickname'>
+  <text>昵称</text>
+  <text wx:if="{{login_name != ''}}">{{login_name}}　></text>
+  <text wx:if="{{login_name == ''}}">修改昵称　></text>
+</view>
+<view class='consignee-name' hover-class='light' bindtap='editname'>
+  <text>姓名</text>
+  <text wx:if="{{name == ''}}">修改姓名　></text>
+  <text wx:if="{{name != ''}}">{{name}}　></text>
+</view>
+<view class='consignee-name' hover-class='light' bindtap='editnumber'>
+  <text>手机号</text>
+  <text wx:if="{{tel != ''}}">{{tel}}　></text>
+  <text wx:if="{{tel == ''}}">修改号码　></text>
+</view>
+
+<!-- 修改昵称弹窗 -->
+<view class="commodity_screen" bindtap="hideView2" wx:if="{{showModalStatus2}}"></view>
+<view animation="{{animationData2}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
+  <view class='canceltitle'>
+    <text bindtap='hideView2' style='font-size:52rpx'>×</text>
+    <text style='margin-right:220rpx;'>修改昵称</text>
+  </view>
+  
+  <input class='name-ipt' type='text' maxlength='10' value='{{login_name}}' bindinput='getloginname'></input>
+  
+  <view class='content'>
+    <view class='cancelname' bindtap='hideView2'>取消</view>
+    <view class='keeploginname' bindtap='keeploginname'>确定</view>
+  </view>
+</view>
+<!-- 修改昵称弹窗 -->
+
+<!-- 修改姓名弹窗 -->
+<view class="commodity_screen" bindtap="hideView" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='canceltitle'>
+    <text bindtap='hideView' style='font-size:52rpx'>×</text>
+    <text style='margin-right:220rpx;'>修改姓名</text>
+  </view>
+  
+  <input class='name-ipt' type='text' maxlength='10' value='{{name}}' bindinput='getname'></input>
+  
+  <view class='content'>
+    <view class='cancelname' bindtap='hideView'>取消</view>
+    <view class='keepname' bindtap='keepname'>确定</view>
+  </view>
+</view>
+<!-- 修改姓名弹窗 -->
+
+<!-- 修改手机号弹窗 -->
+<view class="commodity_screen" bindtap="hideView1" wx:if="{{showModalStatus1}}"></view>
+<view animation="{{animationData1}}" class="commodity_attr_box" wx:if="{{showModalStatus1}}">
+  <view class='canceltitle'>
+    <text bindtap='hideView1' style='font-size:52rpx'>×</text>
+    <text style='margin-right:200rpx;'>修改手机号</text>
+  </view>
+  
+  <input class='number-ipt' type='number' maxlength='11' value='{{tel}}' bindinput='gettel'></input>
+  
+  <view class='content'>
+    <view class='cancelname' bindtap='hideView1'>取消</view>
+    <view class='keeptel' bindtap='keeptel'>确定</view>
+  </view>
+</view>
+<!-- 修改手机号弹窗 -->

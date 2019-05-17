@@ -1,0 +1,45 @@
+<!--pages/oftenconsignee/oftenconsignee.wxml-->
+<view class='title'>常用收货人联系方式</view>
+<view class='consignee-name' hover-class='light' bindtap='editname'>
+  <text>姓名</text>
+  <text>{{consigneename}}　></text>
+</view>
+<view class='consignee-name' hover-class='light' bindtap='editnumber'>
+  <text>手机号</text>
+  <text>{{consigneetel}}　></text>
+</view>
+<view class='tip'>温馨提示：请填写正确的收货人联系方式，以方便客服与您及时联系取货！</view>
+
+<!-- 修改姓名弹窗 -->
+<view class="commodity_screen" bindtap="hideView" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='canceltitle'>
+    <text bindtap='hideView' style='font-size:52rpx'>×</text>
+    <text style='margin-right:220rpx;'>修改姓名</text>
+  </view>
+  
+  <input class='name-ipt'  type='text' maxlength='10' value='{{consigneename}}' bindinput='getname'></input>
+  
+  <view class='flex-row'>
+    <view class='cancelname' bindtap='hideView'>取消</view>
+    <view class='keepname' bindtap='keepname'>确定</view>
+  </view>
+</view>
+<!-- 修改姓名弹窗 -->
+
+<!-- 修改手机号弹窗 -->
+<view class="commodity_screen" bindtap="hideView1" wx:if="{{showModalStatus1}}"></view>
+<view animation="{{animationData1}}" class="commodity_attr_box" wx:if="{{showModalStatus1}}">
+  <view class='canceltitle'>
+    <text bindtap='hideView1' style='font-size:52rpx'>×</text>
+    <text style='margin-right:200rpx;'>修改手机号</text>
+  </view>
+  
+  <input class='number-ipt' type='number' maxlength='11' value='{{consigneetel}}' bindinput='gettel'></input>
+  
+  <view class='flex-row'>
+    <view class='cancelname' bindtap='hideView1'>取消</view>
+    <view class='keepname' bindtap='keeptel'>确定</view>
+  </view>
+</view>
+<!-- 修改手机号弹窗 -->

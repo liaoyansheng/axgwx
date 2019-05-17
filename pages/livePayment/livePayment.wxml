@@ -1,0 +1,17 @@
+<!--pages/livePayment/livePayment.wxml-->
+<view class='title'>
+  安心购正在向您收款
+</view>
+<view class='logopage'>
+  <image class='logo' src="https://zhipai.oss-cn-shenzhen.aliyuncs.com/20190301/20190301093120D08F.png">
+  </image>
+</view>
+<view class='flex-column content'>
+  <view class='pri'>金额</view>
+  <view class='flex-row' style='border-bottom:4rpx solid #CCCC;'>
+    <text style='height:100rpx;font-size:60rpx;font-weight:bold;'>¥</text>
+    <input class='mony-ipt' type='digit' placeholder='输入金额' placeholder-style='font-size:60rpx;'></input>
+  </view>
+  <view class='pay-btn'>立即支付</view>
+  <view class='pay-tip'>支付成功后，如需退款请及时联系安心购。</view>
+</view>

@@ -1,0 +1,55 @@
+<import src="../template/globalSearch/globalSearch.wxml"/>
+
+<!-- banner 轮播图 -->
+<view class='swiperBox'>
+  <swiper class='swiperBox' autoplay='{{autoplay}}' current='{{current}}' interval='{{interval}}' duration='{{duration}}'>
+    <block wx:for='{{bannerlist}}' wx:key='bannerlist'>
+      <swiper-item>
+        <image wx:if='{{item.path}}' src='{{osspath}}{{item.path}}' class='swiperBox' bindtap='towxappurl' data-url='{{item.wxappurl}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 游客首页 -->
+<!-- <block wx:if='{{type == 0}}'> -->
+<template is='globalSearch' data='{{searchTip}}'/>
+
+<view class='goodslist'>
+ <block wx:for="{{products}}" wx:key="{{index}}">
+   <view class="goods" bindtap="toProductDetails" data-id="{{item.id}}">
+    <image wx:if="{{item.is_new==2}}" class='goods1'></image>
+    <image wx:if="{{item.is_top==2}}" class='goods2'></image>
+     <image wx:if='{{item.picture_url}}' class='goodsimg' src='{{osspath}}{{item.picture_url}}'></image>
+     <view class='goods-title'>{{item.name}}</view>
+     <view class='goods-content'>
+       <view class='goods-price'>￥{{item.group_price}}</view>
+       <view class='goods-btn'>立即抢购</view>
+     </view>
+   </view>
+ </block>
+</view>
+<!-- </block> -->
+<!-- 游客首页 -->
+
+<!-- 特定小区首页 -->
+
+<!-- <block wx:if='{{type != 0}}'>
+  <block wx:for="{{activities}}" wx:key="{{index}}" wx:for-item="activity">
+    <view class='activitylist' bindtap="toactivitydetails" data-id='{{activity.id}}'>
+      <view class='activity-title'>{{activity.title}}</view>
+      <view class='activity-introduce'>{{activity.introduction}}</view>
+      <view class='activity-time'>活动时间：{{activity.start_time}}至  {{activity.end_time}}</view>
+      <view class='activity-imglist'>
+
+        <block wx:for="{{activity.images}}" wx:key="index" wx:for-item="product">
+          <image class='activity-img' mode='widthFix' src='{{osspath}}{{product.picture_url}}'></image>
+        </block>
+        
+      </view>
+      <view class='activity-visitnum'>有{{activity.visit_count}}人看过，{{activity.join_count}}人参与</view>
+    </view>
+  </block>
+</block> -->
+
+<!-- 特定小区首页 -->

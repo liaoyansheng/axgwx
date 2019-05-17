@@ -1,0 +1,10 @@
+<template name="globalSearch">
+  <view class='searchBox'>
+    <view class='searchBg'>
+      <input placeholder='{{searchTip[0]}}' class='searchInput' confirm-type="search" bindconfirm='searchBtn' value='{{searchName}}' bindinput='searchInput'></input>
+    </view>
+    <view class='searchBtn' bindtap='searchBtn'>
+    <image style='width:42rpx;height:42rpx;' src='/image/icon/search.png'></image>
+    </view>
+  </view>
+</template>

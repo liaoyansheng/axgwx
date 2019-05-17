@@ -1,0 +1,103 @@
+<import src="../template/globalSearch/globalSearch.wxml"/>
+
+<!--pages/submitorders/submitorders.wxml-->
+<view class='orders-tip'>您购买的商品将由安心购统一配送到您小区附近的提货点，请您尽快到自提点提货！</view>
+<view class='flex-row adress' style='border-bottom:0;'>
+  <image class='ad-icon' src='/image/icon/adress.png'></image>
+  <block wx:if="{{adstatu == true}}">
+  <view class='flex-column'>
+    <text class='ad-txt'>提货人：{{consignee_name}}</text>
+    <text class='ad-txt'>联系方式：{{consignee_tel}}</text>
+  </view>
+  <view class='adress-edit' bindtap='adedit'>
+    <image src='/image/icon/write.png'style='width:50rpx;height:50rpx;'></image>
+  </view>
+  </block>
+  <block wx:if="{{adstatu == false}}">
+  <view class='flex-column'>
+    <view class='flex-row' style='margin-bottom:2rpx;'>
+      <text class='ad-txt1'>提货人：</text>
+      <input class='ad-ipt' type='text' maxlength='10' bindinput='getname' value='{{consignee_name}}'/>
+    </view>
+    <view class='flex-row' style='margin-bottom:2rpx;'> 
+      <text class='ad-txt1'>联系方式：</text>
+      <input class='ad-ipt' type='number' maxlength='11' bindinput='gettel' value='{{consignee_tel}}' />
+    </view>
+  </view>
+  <!-- <view class='adress-edit' bindtap='adedit1'>确定修改</view> -->
+  <view class='adress-edit' bindtap='adedit1'>
+    <image src='/image/icon/write.png'style='width:50rpx;height:50rpx;'></image>
+  </view>
+  </block>
+</view>
+
+<view class='flex-row adress' style='border-top:4rpx solid #F1F1F1;' bindtap='replacead'>
+  <view class='ad-tilte'>地址：</view>
+  <view class='ad-adress'>{{address}}</view>
+  <!-- <view class='ad-replace' bindtap='replacead'>选择地址</view> -->
+  <view class='ad-tilte' style='width:50rpx;'>
+    <image src='/image/icon/right.png' style='width:14rpx;height:25rpx;'></image>
+  </view>
+</view>
+
+<view class='line' style='border-bottom:8rpx solid #F1F1F1;'>
+  <image class='line' src='/image/icon/line.png'></image>
+</view>
+
+<view wx:for="{{products}}" wx:key="" wx:for-item="product">
+  <view>
+    <view class='flex-row adress'>
+      <view class='flex-row'>
+        <image class='img-icon' src='{{osspath}}{{product.picture_url}}'></image>
+        <view class='flex-column'>
+          <text class='product-title'>{{product.name}}</text>
+          <text class='product-spe'>{{product.specification}}</text>
+        </view>
+      </view>
+      <view class='flex-column'>
+        <text class='product-price'>￥{{product.group_price}} </text>
+        <text class='product-num'>x {{product.num}} </text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='flex-row discount' bindtap='discount'>
+  <text>优惠劵</text>
+  <text>使用优惠　》</text>
+</view>
+
+<view class='flex-row discount'>
+  <text style='color:#000000;'>买家留言</text>
+  <input class='leamsg' placeholder='建议留言前与客服沟通确认' style='color:#666666' bindinput='getcomment' value='{{comment}}'></input>
+</view>
+
+<view style='width: 750rpx;height: 200rpx;'></view>
+
+<view class='payment'>
+  <view class='pay-pri'><text>合计：</text><text class='prices'>￥{{amount}}</text></view>
+  <view class='pay-btn' bindtap="commitOrder">立即支付</view>
+</view>
+
+<!-- 更换地址弹窗 -->
+<view class="commodity_screen" bindtap="hideView" wx:if="{{showModalStatus1}}"></view>
+<view animation="{{animationData1}}" class="commodity_attr_box" wx:if="{{showModalStatus1}}">
+  <view class='canceltitle'>
+    <text bindtap='hideView' style='font-size:52rpx'>×</text>
+    <text style='margin-right:260rpx;'>更换地址</text>
+  </view>
+
+  <template is='globalSearch' data='{{searchTip}}'/>
+
+  <view class='adresslist'>
+    <block wx:for="{{addresslist}}" wx:key="index">
+
+    <view class="adress-one {{isChecked==index?'adress-check':''}}" data-index="{{index}}" data-ad="{{item.addressdetail}}({{item.c_name}})" data-c_id="{{item.id}}" bindtap='ischeck'>{{item.c_name}}</view>
+
+    </block>
+  </view>
+  <view class='adresskeep' bindtap='keepAdress'>确定</view>
+
+</view>
+<!-- 更换地址弹窗 -->

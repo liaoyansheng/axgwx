@@ -1,0 +1,126 @@
+/* pages/accountconfigure/accountconfigure.wxss */
+page{
+  background: #F2F2F2;
+}
+.title{
+  width: 710rpx;
+  height: 120rpx;
+  font-size:36rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  background: #FFF;
+  line-height:120rpx;
+  text-align: left;
+  padding: 0 20rpx;
+  border-bottom:8rpx solid #F2F2F2;
+}
+.consignee-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 710rpx;
+  height: 100rpx;
+  font-size:30rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:#000;
+  background: #FFF;
+  line-height:100rpx;
+  text-align: left;
+  padding: 0 20rpx;
+  border-bottom:8rpx solid #F2F2F2;
+}
+.light{
+  background-color:#F2F2F2;
+}
+.head{
+  width: 70rpx;
+  height: 70rpx;
+  margin:10rpx;
+}
+.commodity_screen {
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1000;
+}
+.commodity_attr_box {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  width: 670rpx;
+  height: 444rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 260rpx;
+  left: 40rpx;
+  z-index: 2000;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  font-size:30rpx;
+  font-weight: 600;
+}
+.canceltitle{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin:18rpx;
+  line-height:30rpx;
+}
+.cancelname{
+  width: 335rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size:36rpx;
+  color:rgba(226,44,71,1);
+  background: rgba(255,224,229,1);
+  text-align: center;  
+  border-radius:0 0 0 10rpx;
+}
+.keepname,
+.keeploginname,
+.keeptel
+{
+  width: 336rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size:36rpx;
+  color:#FFF;
+  background: rgba(226,44,71,1);
+  text-align: center;
+  border-radius:0 0 10rpx 0;
+}
+.name-ipt{
+  width:596rpx;
+  height:80rpx;
+  background:rgba(255,255,255,1);
+  border:1rpx solid rgba(210,210,210,1);
+  border-radius:10rpx;  
+  margin:20rpx;
+  font-size:30rpx;
+  padding-left:30rpx;
+}
+.number-ipt{
+  width:596rpx;
+  height:80rpx;
+  background:rgba(255,255,255,1);
+  border:1rpx solid rgba(210,210,210,1);
+  border-radius:10rpx;  
+  margin:20rpx;
+  font-size:30rpx;
+  padding-left:30rpx;  
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

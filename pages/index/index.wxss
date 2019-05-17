@@ -1,0 +1,151 @@
+@import "../template/globalSearch/globalSearch.wxss";
+.swiperBox{
+  width:750rpx;
+  height:350rpx;
+}
+.bannerimg{
+  width:750rpx;
+  height:350rpx;
+}
+.searchBox {
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-top: -44rpx;
+  background-color: transparent;
+}
+.searchBg {
+  /* border: 2rpx solid #dedede; */
+  border-radius: 36rpx;
+  box-shadow: 0 6rpx 8rpx #eeeeee;
+}
+.searchBtn {
+  background-color: transparent;
+}
+.goodslist{
+  width: 710rpx;
+  height: auto;
+  margin:20rpx;
+  display: flex;
+  flex-flow: row wrap;
+}
+.goods{
+  width: 330rpx;
+  height: 510rpx;
+  /* border: 1rpx solid #dedede; */
+  box-shadow: 0 6rpx 8rpx #eeeeee;
+  margin:0 10rpx 30rpx 10rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+.goods1{
+  background: url(' http://zhipai.oss-cn-shenzhen.aliyuncs.com/20190122/20190122171229652B.png') no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top:0;
+  left: 18rpx;
+  z-index: 2000;
+  width: 70rpx;
+  height: 80rpx;
+}
+.goods2{
+  background: url('http://zhipai.oss-cn-shenzhen.aliyuncs.com/20190122/201901221706542E57.png') no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top:0;
+  left: 18rpx;
+  z-index: 1999;
+  width: 70rpx;
+  height: 80rpx;  
+}
+.goodsimg{
+  width: 330rpx;
+  height: 330rpx;
+  border-radius:20rpx 20rpx 0 0;
+}
+.goods-title{
+  width: 310rpx;
+  height: 80rpx;
+  font-size:30rpx;
+  font-weight:600;
+  color:#000;
+  line-height:44rpx;  
+  padding: 10rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+}
+.goods-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10rpx;
+  align-items: baseline;
+}
+.goods-price{
+  width:72rpx;
+  height:36rpx;
+  font-size:30rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(226,44,71,1);
+  line-height:36rpx;
+}
+.goods-btn{
+  width:150rpx;
+  height:50rpx;
+  font-size:30rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background:rgba(226,44,71,1);
+  border-radius:50rpx;  
+  color:#fff;
+}
+.activitylist{
+  width: 710rpx;
+  height: auto;
+  padding:20rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 8rpx solid #F1F1F1;
+}
+.activity-title{
+  height:60rpx;
+  width:100%;
+  font-size:36rpx;
+  font-weight:600;
+  color:rgba(226,44,71,1);
+  line-height:35rpx;
+  margin-bottom:6rpx; 
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.activity-introduce{
+  width:100%;
+  font-size:30rpx;
+  font-weight:550;
+  color:rgba(0,0,0,1);
+  margin:10rpx 0;
+}
+.activity-time{
+  width:100%;
+  font-size:26rpx;
+  color:rgba(102,102,102,1);
+  margin:10rpx 0;
+}
+.activity-imglist{
+  display: flex;
+  flex-flow: row wrap;
+  margin:10rpx 0;
+}
+.activity-img{
+  width: 335rpx;
+  border-radius:10rpx;
+  margin: 0 20rpx 20rpx 0;
+}
+.activity-visitnum{
+  font-size:20rpx;
+  color:rgba(226,44,71,1);
+}

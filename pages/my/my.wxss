@@ -1,0 +1,199 @@
+/* pages/my/my.wxss */
+.bag{
+  background: url('https://zhipai.oss-cn-shenzhen.aliyuncs.com/20190122/20190122175143FCD7.png');
+  width: 750rpx;
+  height: 350rpx;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.head-img{
+  width:145rpx;
+  height:145rpx;
+  border-radius:50%;
+}
+.user-name{
+  width:150rpx;
+  height:36rpx;
+  font-size:30rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  line-height:36rpx;  
+  text-align: center;
+  margin-top:20rpx;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  width:690rpx;
+  padding:20rpx 30rpx;
+  line-height: 60rpx;
+  border-bottom: 8rpx solid #F1F1F1;
+}
+.flex-column{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size:26rpx;
+  margin:0 40rpx;
+}
+.content-tilte{
+  display:flex;
+  align-items:center;
+  color:rgba(0,0,0,1);
+
+  font-family:SourceHanSansCN-Regular;
+  font-size:28rpx;
+  font-weight:600;
+}
+.content-tilte-msg{
+  font-weight:400;
+  color:rgba(153,153,153,1); 
+  font-family:SourceHanSansCN-Regular;
+  font-size:28rpx; 
+}
+.img-icon{
+  width:60rpx;
+  height: 60rpx; 
+}
+/* .waitpaynum::after{
+  content:"3";
+  text-align: center;
+  position:absolute;
+  line-height: 40rpx;
+  width: 40rpx;
+  height:40rpx;
+  border-radius: 50%;
+  top:-14rpx;
+  left:48rpx;
+  color:#FFF;
+  background: red;
+} */
+.waitpaynum{
+  text-align: center;
+  position:absolute;
+  line-height: 40rpx;
+  width: 40rpx;
+  height:40rpx;
+  border-radius: 50%;
+  top:-14rpx;
+  left:48rpx;
+  color:#FFF;
+  background: red;
+}
+/* .waitputnum::after{
+  content:"9";
+  text-align: center;
+  position:absolute;
+  line-height: 40rpx;
+  width: 40rpx;
+  height:40rpx;
+  border-radius: 50%;
+  top:-14rpx;
+  left:48rpx;
+  color:#FFF;
+  background: red;
+} */
+.waitputnum{
+  text-align: center;
+  position:absolute;
+  line-height: 40rpx;
+  width: 40rpx;
+  height:40rpx;
+  border-radius: 50%;
+  top:-14rpx;
+  left:48rpx;
+  color:#FFF;
+  background: red;
+}
+.img-icon-small{
+  width:40rpx;
+  height: 40rpx; 
+  margin-right:20rpx;
+}
+.light{
+  background-color:#F2F2F2;
+}
+.commodity_screen {
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.4;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.commodity_attr_box {
+  display: flex;
+  flex-direction: column;
+  width: 750rpx;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+.nextbtn{
+  width: 750rpx;
+  background: #E22C47;
+  text-align: center;
+  color: #FFFFFF;
+  line-height:100rpx;
+}
+.cancel-img{
+  width: 50rpx;
+  height:50rpx;
+}
+.choose-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 710rpx;
+  padding: 20rpx;
+  font-size:36rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  border-bottom: 2rpx solid #F2F2F2;
+}
+.contact{
+  background-color: #FFF;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+}
+.contact::after{
+ border: #FFF solid;
+}
+.quarterslist{
+  width: 750rpx;
+  height: 500rpx;
+  overflow-y: auto;
+}
+.quarters-one{
+  width:650rpx;
+  height:100rpx;
+  color:rgba(226,44,71,1);
+  background:rgba(255,255,255,1);
+  border:2rpx solid rgba(226,44,71,1);
+  border-radius:10rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin:10rpx 50rpx;
+}
+/* 选中小区样式用三元判断 */
+.quarters-one-light{
+  color: #FFF;
+  background:rgba(226,44,71,1);
+}

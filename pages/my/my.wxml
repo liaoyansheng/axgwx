@@ -1,0 +1,110 @@
+<!--pages/my/my.wxml-->
+<view class='bag'>
+  <image class='head-img' src="{{USER.head_src}}"></image>
+  <view class='user-name'>{{USER.login_name}}</view>
+</view>
+
+<view class='content' hover-class='light' bindtap='toorderslist1' style='border-bottom: 2rpx solid #F1F1F1;'>
+  <view class='content-tilte'>我的订单</view>
+  <view class='content-tilte-msg'>查看全部订单　＞</view>
+</view>
+
+<view class='content'>
+  <view class='flex-column' bindtap='toorderslist2'>
+    <image class='img-icon' src='/image/icon/waitpay.png'></image>
+    <text>待付款</text>
+    <block wx:if='{{info.status.wait_pay != 0}}'>
+    <view class='waitpaynum' wx:if='{{info.status.wait_pay > 0 || info.status.wait_pay <= 9}}'>{{info.status.wait_pay}}</view>
+    </block>
+    <view class='waitpaynum' wx:if='{{info.status.wait_pay > 9}}'>9+</view>    
+  </view>
+  <view class='flex-column' bindtap='toorderslist3'>
+    <image class='img-icon' src='/image/icon/waitput.png'></image>
+    <text>待发货</text>
+    <block wx:if='{{info.status.wait_send != 0}}'>
+    <view class='waitputnum' wx:if='{{info.status.wait_send > 0 || info.status.wait_send <= 9}}'>{{info.status.wait_send}}</view>
+    </block>
+    <view class='waitpaynum' wx:if='{{info.status.wait_send > 9}}'>9+</view>      
+  </view>
+  <view class='flex-column' bindtap='toorderslist4'>
+    <image class='img-icon' src='/image/icon/alertput.png'></image>
+    <text>已发货</text>
+  </view>
+  <view class='flex-column' bindtap='toorderslist5'>
+    <image class='img-icon' src='/image/icon/alertcencel.png'></image>
+    <text>已关闭</text>
+  </view>
+</view>
+
+<view class='content' hover-class='light' bindtap='userpoints'>
+  <view class='content-tilte'>
+    <image class='img-icon-small' src='/image/icon/Member.png'></image>
+    <text>我的会员积分:　</text>
+    <text style='color:rgba(226,44,71,1);'>{{info.points}}积分</text>
+  </view>
+  <view class='content-tilte-msg'>积分规则　＞</view>
+</view>
+
+<block wx:if="{{info.type == 2}}">
+<view class='content' hover-class='light' bindtap='mygroupactive' wx:if="{{info.type==2}}">
+  <view class='content-tilte'>
+    <image class='img-icon-small' src='/image/icon/group.png'></image>
+    <text>我的团购活动</text>
+  </view>
+  <view class='content-tilte-msg'>查看全部团购活动　＞</view>
+</view>
+</block>
+
+<view class='content' hover-class='light' bindtap='tooftenconsignee'>
+  <view class='content-tilte'>
+    <image class='img-icon-small' src='/image/icon/adicon.png'></image>
+    <text>常用收货人设置</text>
+  </view>
+  <view class='content-tilte-msg'>　＞</view>
+</view>
+
+<view class='content' hover-class='light' bindtap='toaccountconfigure'>
+  <view class='content-tilte'>
+    <image class='img-icon-small' src='/image/icon/accountnotice.png'></image>
+    <text>账号设置</text>
+  </view>
+  <view class='content-tilte-msg'>　＞</view>
+</view>
+
+<button class='contact' open-type="contact" hover-class='light'>
+<view class='content' hover-class='light'>
+  <view class='content-tilte'>
+    <image class='img-icon-small' src='/image/icon/kefu2.png'></image>
+    <text>联系客服</text>
+  </view>
+  <view class='content-tilte-msg'>　＞</view>
+</view>
+</button>
+
+<view class='content' hover-class='light' bindtap='touseragreement'>
+  <view class='content-tilte'>
+    <image class='img-icon-small' src='/image/icon/account2.png'></image>
+    <text>用户协议</text>
+  </view>
+  <view class='content-tilte-msg'>　＞</view>
+</view>
+
+<!-- 我的团购活动-选择小区 -->
+<view class="commodity_screen" bindtap="hideView" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='choose-title'>
+    <text>选择小区</text>
+    <image class='cancel-img' catchtap='hideView' src="/image/icon/close.png"></image>
+  </view>
+  <view class='quarterslist'>
+
+    <block wx:for="{{community_list}}" wx:key="{{index}}">
+      <view class='quarters-one' data-id="{{item.id}}" data-idx="{{index}}" bindtap="btn_sub" style="{{index == idx?'background-color:#E22C47; color: #FFFFFF':''}}">
+      {{item.c_name}}
+      </view>
+    </block>
+
+  </view>
+  <view class='nextbtn' bindtap='tomygrouplist'>确定</view>
+</view>
+<!-- 我的团购活动-选择小区 -->
